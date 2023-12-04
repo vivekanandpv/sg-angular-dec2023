@@ -7,7 +7,4 @@ import { Component } from '@angular/core';
   templateUrl: './sample.component.html',
   styleUrl: './sample.component.scss',
 })
-export class SampleComponent {
-  myId = 'sample-id-123';
-  myTitle = 'Good afternoon';
-}
+export class SampleComponent {}

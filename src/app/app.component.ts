@@ -1,13 +1,9 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { UcClonePipe } from './uc-clone.pipe';
 import { SampleComponent } from './sample/sample.component';
-
-export interface Car {
-  make: string;
-  model: string;
-  year?: number;
-}
 
 @Component({
   selector: 'app-root',
@@ -16,24 +12,4 @@ export interface Car {
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title: string;
-  today = new Date();
-  car: Car = {
-    make: 'Honda',
-    model: 'City',
-    year: 2022,
-  };
-
-  constructor() {
-    this.title = 'Hello Angular';
-  }
-
-  getName(): string {
-    return 'John Doe';
-  }
-
-  getGreeting(person: string): string {
-    return `Hi, ${person}`;
-  }
-}
+export class AppComponent {}
