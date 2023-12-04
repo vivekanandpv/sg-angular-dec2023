@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Person } from '../app.component';
 
 @Component({
   selector: 'app-sample',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
   templateUrl: './sample.component.html',
   styleUrl: './sample.component.scss',
 })
-export class SampleComponent {}
+export class SampleComponent {
+  @Input() personFromParent?: Person;
+}

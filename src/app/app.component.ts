@@ -5,6 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { UcClonePipe } from './uc-clone.pipe';
 import { SampleComponent } from './sample/sample.component';
 
+export interface Person {
+  firstName: string;
+  lastName: string;
+  email: string;
+}
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -12,4 +18,10 @@ import { SampleComponent } from './sample/sample.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {}
+export class AppComponent {
+  person: Person = {
+    firstName: 'John',
+    lastName: 'Doe',
+    email: 'john@gmail.com',
+  };
+}
