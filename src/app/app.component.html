@@ -1,5 +1,8 @@
 <div class="p-5">
   <h2>Angular Learning</h2>
   <hr />
-  <app-sample [personFromParent]="person"></app-sample>
+  <app-sample
+    [personFromParent]="person"
+    (onLogin)="parentHandler($event)"
+  ></app-sample>
 </div>

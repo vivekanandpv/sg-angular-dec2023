@@ -24,4 +24,8 @@ export class AppComponent {
     lastName: 'Doe',
     email: 'john@gmail.com',
   };
+
+  parentHandler(m: string): void {
+    console.log('App Component receives', m);
+  }
 }

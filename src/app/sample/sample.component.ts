@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Person } from '../app.component';
 
 @Component({
@@ -10,4 +10,10 @@ import { Person } from '../app.component';
 })
 export class SampleComponent {
   @Input() personFromParent?: Person;
+  @Output() onLogin = new EventEmitter<string>();
+
+  handleClick(): void {
+    console.log('local handler');
+    this.onLogin.emit('Good afternoon from the Sample Component');
+  }
 }
