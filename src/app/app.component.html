@@ -1,8 +1,6 @@
 <div class="p-5">
   <h2>Angular Learning</h2>
   <hr />
-  <app-sample
-    [personFromParent]="person"
-    (onLogin)="parentHandler($event)"
-  ></app-sample>
+  <button class="btn btn-primary my-4" (click)="handleClick()">Mutate</button>
+  <pre>{{ person | jsonClone }}</pre>
 </div>

@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { UcClonePipe } from './uc-clone.pipe';
 import { SampleComponent } from './sample/sample.component';
+import { JsonClonePipe } from './json-clone.pipe';
 
 export interface Person {
   firstName: string;
@@ -14,7 +15,7 @@ export interface Person {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, SampleComponent],
+  imports: [CommonModule, RouterOutlet, SampleComponent, JsonClonePipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -25,7 +26,15 @@ export class AppComponent {
     email: 'john@gmail.com',
   };
 
-  parentHandler(m: string): void {
-    console.log('App Component receives', m);
+  handleClick(): void {
+    //  immutable update: works with both (pure and impure pipes), recommended approach
+    // this.person = {
+    //   firstName: 'John',
+    //   lastName: 'Doe',
+    //   email: 'john@gmail.com',
+    // };
+
+    //  mutation: requires impure pipe, not recommended
+    this.person.email = 'doe@gmail.com';
   }
 }

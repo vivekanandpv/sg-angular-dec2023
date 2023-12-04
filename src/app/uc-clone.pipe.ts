@@ -6,6 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class UcClonePipe implements PipeTransform {
   transform(value: string, ...args: string[]): string {
-    return `${value.toUpperCase()}--${args.toString()}`;
+    return `${value.toUpperCase()}--${args.toString}`;
   }
 }
